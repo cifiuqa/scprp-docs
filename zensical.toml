@@ -3,3 +3,36 @@ site_name = "Aqua's Documentation"
 site_url = "https://cifiuqa.github.io/scprp-docs"
 site_description = "Documentation for SCP:RP Addons, made by @aquific"
 site_author = "Aquific"
+
+nav = [
+    {"Introduction" = "index.md"},
+    {"Markdown" = "markdown.md"}
+]
+
+extra_css = ["stylesheets/extra.css"]
+
+[project.theme]
+palette.scheme = "slate"
+palette.primary = "custom"
+palette.accent = "custom"
+
+font.text = "Roboto"
+font.code = "Roboto Mono"
+
+language = "en"
+
+logo = "images/logo.png"
+favicon = "images/logo.png"
+
+
+features = [
+    "navigation.instant",
+    "navigation.instant.prefetch",
+    "navigation.instant.progress",
+    "navigation.tracking",
+    "navigation.sections",
+    "navigation.path",
+    "navigation.indexes",
+    "navigation.top",
+    "toc.follow"
+]
