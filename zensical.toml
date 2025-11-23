@@ -1,22 +1,26 @@
 [project]
-site_name = "Aqua's Documentation"
+site_name = "SCP:RP Addon Docs"
 site_url = "https://cifiuqa.github.io/scprp-docs"
-site_description = "Documentation for SCP:RP Addons, made by @aquific"
-site_author = "Aquific"
+site_description = "Documentation for SCP:RP Addons, maintained by The Aquifer."
+site_author = "The Aquifer"
 
 nav = [
     {"Introduction" = "index.md"},
-    {"Markdown" = "markdown.md"}
+    {"Documentation" = [
+        "scprp/index.md",
+        {"SCP:RP Functions" = "scprp/functions.md"}
+    ]}
 ]
 
 extra_css = ["stylesheets/extra.css"]
+
+copyright = "Made by <a href='https://discord.gg/xAU96USgBv'>The Aquifer</a>."
 
 [project.theme]
 palette.scheme = "slate"
 palette.primary = "custom"
 palette.accent = "custom"
 
-font.text = "Roboto"
 font.code = "Roboto Mono"
 
 language = "en"
@@ -36,3 +40,18 @@ features = [
     "navigation.top",
     "toc.follow"
 ]
+
+[project.extra]
+generator = false
+
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.gg/xAU96USgBv"
+name = "The Aquifer on Discord"
+
+[project.markdown_extensions.toc]
+toc_depth = 3
+
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
