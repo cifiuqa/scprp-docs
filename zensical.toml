@@ -8,13 +8,15 @@ nav = [
     {"Introduction" = "index.md"},
     {"Documentation" = [
         "scprp/index.md",
-        {"SCP:RP Functions" = "scprp/functions.md"}
+        {"SCP:RP Functions" = "scprp/functions.md"},
+        {"Roblox Integration" = "scprp/roblox.md"},
+        {"Limitations" = "scprp/limitations.md"}
     ]}
 ]
 
 extra_css = ["stylesheets/extra.css"]
 
-copyright = "Made by <a href='https://discord.gg/xAU96USgBv'>The Aquifer</a>."
+copyright = "Made with love by <a href='https://discord.gg/xAU96USgBv'>The Aquifer</a>."
 
 [project.theme]
 palette.scheme = "slate"
@@ -55,3 +57,11 @@ toc_depth = 3
 [project.markdown_extensions.pymdownx.emoji]
 emoji_index = "zensical.extensions.emoji.twemoji"
 emoji_generator = "zensical.extensions.emoji.to_svg"
+
+[project.markdown_extensions.attr_list]
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
