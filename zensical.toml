@@ -16,7 +16,7 @@ nav = [
 
 extra_css = ["stylesheets/extra.css"]
 
-copyright = "Made with love by <a href='https://discord.gg/xAU96USgBv'>The Aquifer</a>."
+copyright = """Maintained with love by <a href='https://discord.gg/xAU96USgBv' target='_blank'>The Aquifer</a>. Powered by <a href='https://zensical.org' target='_blank'>Zensical</a>."""
 
 [project.theme]
 palette.scheme = "slate"
@@ -65,3 +65,17 @@ emoji_generator = "zensical.extensions.emoji.to_svg"
 [project.markdown_extensions.pymdownx.superfences]
 [project.markdown_extensions.pymdownx.tabbed]
 alternate_style = true
+
+[project.theme.icon.admonition]
+note = "fontawesome/solid/note-sticky"
+abstract = "fontawesome/solid/book"
+info = "fontawesome/solid/circle-info"
+tip = "fontawesome/solid/bullhorn"
+success = "fontawesome/solid/check"
+question = "fontawesome/solid/circle-question"
+warning = "fontawesome/solid/triangle-exclamation"
+failure = "fontawesome/solid/bomb"
+danger = "fontawesome/solid/skull"
+bug = "fontawesome/solid/robot"
+example = "fontawesome/solid/flask"
+quote = "fontawesome/solid/quote-left"

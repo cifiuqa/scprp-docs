@@ -58,3 +58,8 @@ Press "SAVE CHANGES" at the bottom of the menu.
 ![Step 7](images/addon-tutorial/step7.png)
 
 And done! Your addon should work as intended. If you have any issues, such as an error appearing in the bottom right of your screen, we recommend getting help from either the script creator or someone from [The Aquifer](https://discord.gg/xAU96USgBv)!
+
+## I'm new to this, where do I start?
+Overall, the SCP: Roleplay scripting environment isn't very good learning if you've never programmed before.
+
+What we recommend is that you go to [Roblox Creator Hub](https://create.roblox.com) and download "Roblox Studio", and use YouTube tutorials to get a greater understanding of how the engine, and LuaU work, so you can then use your abilities in addons.
