@@ -8,8 +8,8 @@ icon: lucide/braces
     !!! quote
         "Humans can create, machines can only imitate"
 ---
-## Instances
-This section contains functions useful for accessing or manipulating instances.
+## World & Instances
+This section contains functions useful for accessing or manipulating instances and the world.
 
 ---
 ### `f( name: string / Instance )` {data-toc-label="f()"}
@@ -52,6 +52,27 @@ This section contains functions useful for accessing or manipulating instances.
     for _, instance in ipairs(examples) do
         examples:RemoveTag("Example")
     end
+    ```
+---
+### `tween(instance: Instance, options: TweenInfo, goal: Table)` {data-toc-label="tween()"}
+???+ info "Explanation"
+    This function allows you to gradually move a property's value between its point and your specified goal points.
+    ???+ warning
+        As of writing, the tween function ignores any specified EasingStyle, instead using Sine.
+??? success "Usage"
+    Parameter: An instance to apply the tween to, *a TweenInfo made with TweenInfo.new() and a table of target property values.* See example for more info.
+    
+    Returns: This function does not return anything.
+??? example
+    ``` lua
+    local part = f("Example_Part")
+    local target = CFrame.new(0, 10, 0)
+    local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.In) -- 1 second, SineIn for the interpolation.
+    tween(
+        part,
+        tweenInfo,
+        {CFrame = target}
+    )
     ```
 ---
 ## Player
