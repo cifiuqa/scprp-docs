@@ -67,7 +67,11 @@ This section contains functions useful for accessing or manipulating instances a
     ``` lua
     local part = f("Example_Part")
     local target = CFrame.new(0, 10, 0)
-    local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.In) -- 1 second, SineIn for the interpolation.
+    local tweenInfo = TweenInfo.new(
+        1,
+        Enum.EasingStyle.Sine,
+        Enum.EasingDirection.In
+    ) -- 1 second, SineIn for the interpolation.
     tween(
         part,
         tweenInfo,
