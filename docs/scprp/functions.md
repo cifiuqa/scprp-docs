@@ -40,6 +40,7 @@ This section contains functions useful for accessing or manipulating instances a
 
     ???+ warning
         As of writing, tags are not saved with the map. They must be manually set with :AddTag() whenever the map is loaded.
+        If you believe this warning is no longer applicable, let us know in [The Aquifer](https://discord.gg/xAU96USgBv).
 
 ??? success "Usage"
     Parameters: To use this function, simply enter a string for the tag, note that it IS case sensitive.
@@ -59,8 +60,9 @@ This section contains functions useful for accessing or manipulating instances a
     This function allows you to gradually move a property's value between its point and your specified goal points.
     ???+ warning
         As of writing, the tween function ignores any specified EasingStyle, instead using Sine.
+        If you believe this warning is no longer applicable, let us know in [The Aquifer](https://discord.gg/xAU96USgBv).
 ??? success "Usage"
-    Parameter: An instance to apply the tween to, *a TweenInfo made with TweenInfo.new() and a table of target property values.* See example for more info.
+    Parameters: An instance to apply the tween to, *a TweenInfo made with TweenInfo.new() and a table of target property values.* See example for more info.
     
     Returns: This function does not return anything.
 ??? example
@@ -77,6 +79,18 @@ This section contains functions useful for accessing or manipulating instances a
         tweenInfo,
         {CFrame = target}
     )
+    ```
+---
+### `tweenGetValue(alpha: number, EasingStyle, EasingDirection)` {data-toc-label="tweenGetValue()"}
+???+ info "Explanation"
+    This function can be used as a more advanced version of a :Lerp(). It allows you to get a value from a tween, without actually tweening anything. For more information, check out the [Official Roblox Documentation](https://create.roblox.com/docs/reference/engine/classes/TweenService#GetValue) of the function.
+??? sucess "Usage"
+    Parameters: Alpha is the decimal of how far along the ease to get the value of, 0 for at the very start, 1 for at the very end. Easing style is the different interpolation shape to use, you can find more on the [Official Roblox Documentation](https://create.roblox.com/docs/reference/engine/classes/TweenService#GetValue). And easing direction is another useful element for easing style.
+
+    Returns: A number between 0 and 1 representing the equivalent found value from the easing style and the alpha provided.
+??? example
+    ``` lua
+    local target = tweenGetValue(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.In)
     ```
 ---
 ## Player
