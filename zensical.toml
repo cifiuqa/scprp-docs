@@ -16,7 +16,7 @@ nav = [
 
 extra_css = ["stylesheets/extra.css"]
 
-copyright = """Maintained with love by <a href='https://discord.gg/xAU96USgBv' target='_blank'>The Aquifer</a>. Powered by <a href='https://zensical.org' target='_blank'>Zensical</a>."""
+copyright = """Maintained with love by <a href='https://discord.gg/3JgZcuyZUp' target='_blank'>The Aquifer</a>. Powered by <a href='https://zensical.org' target='_blank'>Zensical</a>."""
 
 [project.theme]
 palette.scheme = "slate"
