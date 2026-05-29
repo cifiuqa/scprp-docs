@@ -58,28 +58,6 @@ This section contains functions useful for accessing or manipulating instances a
     end
     ```
 ---
-### `raycast( origin: Vector3, direction: Vector3, params: RaycastParams, players: table )` {data-toc-label="raycast()"}
-???+ info "Explanation"
-    Performs a raycast operation from the given origin in the given direction and returns the result, just as Roblox's built-in `workspace:Raycast()` would.
-
-    ???+ note
-        If the ray hits a player's character, the `RaycastResult.Instance` property will be set to that player's **username** (a string) rather than the actual Instance. Keep this in mind when checking what the ray hit.
-
-??? success "Usage"
-    Parameters: `origin` is the starting Vector3 position of the ray. `direction` is a Vector3 representing the direction and length of the ray. `params` is an optional RaycastParams object (defaults to nil). `players` is an optional table of player usernames to include in the raycast (defaults to nil).
-
-    Returns: A RaycastResult, or nil if nothing was hit.
-
-??? example
-    Casting a ray downward from a part and printing what it hits.
-    ``` lua
-    local part = f("RayOrigin")
-    local result = raycast(part.Position, Vector3.new(0, -100, 0))
-    if result then
-        print(result.Instance) -- Username string if a player, otherwise an Instance
-    end
-    ```
----
 ## Player
 This section contains functions useful for accessing information about players in the server.
 
@@ -904,45 +882,7 @@ This section contains functions for displaying messages and UI elements to playe
     subsideinfo("Prepare for recontainment")
     ```
 ---
-### `rigSay( name: string, message: string )` {data-toc-label="rigSay()"}
-???+ info "Explanation"
-    Makes the specified rig (loaded via a command such as `:load rig`) display a chat bubble with the given message above its head. Useful for making NPCs or scripted characters "speak".
 
-??? success "Usage"
-    Parameters: The name of the rig (string), and the message for it to say (string).
-
-    Returns: nil
-
-??? example
-    Making a rig called "Guard" say something.
-    ``` lua
-    rigSay("Guard", "Halt! Who goes there?")
-    ```
----
-### `rigMoveTo( name: string, position: Vector3 / bool, callback: function )` {data-toc-label="rigMoveTo()"}
-???+ info "Explanation"
-    Instructs the specified rig to pathfind and move to the specified position. An optional callback function can be provided, which is called whenever the rig fires `MoveToFinished`.
-
-    ???+ note
-        Passing `true` as the `position` argument will cause the rig to immediately halt its current movement, rather than moving to a new destination.
-
-??? success "Usage"
-    Parameters: The name of the rig (string). A Vector3 position to move to, or `true` to stop movement. An optional callback function called when movement finishes.
-
-    Returns: nil
-
-??? example
-    Moving a rig to a specific position and printing when it arrives.
-    ``` lua
-    rigMoveTo("Guard", Vector3.new(10, 0, 20), function()
-        print("Guard has arrived!")
-    end)
-    ```
-    Stopping a rig's movement.
-    ``` lua
-    rigMoveTo("Guard", true)
-    ```
----
 ## World
 This section contains functions for interacting with the game world, such as lighting, sounds, and the environment.
 
@@ -1247,4 +1187,69 @@ This section contains functions for server management and external web requests.
     local response = http("https://api.example.com/data")
     local data = jsonDecode(response)
     print(data.someField)
+    ```
+---
+## Misc.
+This section contains functions which do not fit neatly into a single category.
+
+---
+### `raycast( origin: Vector3, direction: Vector3, params: RaycastParams, players: table )` {data-toc-label="raycast()"}
+???+ info "Explanation"
+    Performs a raycast operation from the given origin in the given direction and returns the result, just as Roblox's built-in `workspace:Raycast()` would.
+
+    ???+ note
+        If the ray hits a player's character, the `RaycastResult.Instance` property will be set to that player's **username** (a string) rather than the actual Instance. Keep this in mind when checking what the ray hit.
+
+??? success "Usage"
+    Parameters: `origin` is the starting Vector3 position of the ray. `direction` is a Vector3 representing the direction and length of the ray. `params` is an optional RaycastParams object (defaults to nil). `players` is an optional table of player usernames to include in the raycast (defaults to nil).
+
+    Returns: A RaycastResult, or nil if nothing was hit.
+
+??? example
+    Casting a ray downward from a part and printing what it hits.
+    ``` lua
+    local part = f("RayOrigin")
+    local result = raycast(part.Position, Vector3.new(0, -100, 0))
+    if result then
+        print(result.Instance) -- Username string if a player, otherwise an Instance
+    end
+    ```
+---
+### `rigSay( name: string, message: string )` {data-toc-label="rigSay()"}
+???+ info "Explanation"
+    Makes the specified rig (loaded via a command such as `:load rig`) display a chat bubble with the given message above its head. Useful for making NPCs or scripted characters "speak".
+
+??? success "Usage"
+    Parameters: The name of the rig (string), and the message for it to say (string).
+
+    Returns: nil
+
+??? example
+    Making a rig called "Guard" say something.
+    ``` lua
+    rigSay("Guard", "Halt! Who goes there?")
+    ```
+---
+### `rigMoveTo( name: string, position: Vector3 / bool, callback: function )` {data-toc-label="rigMoveTo()"}
+???+ info "Explanation"
+    Instructs the specified rig to pathfind and move to the specified position. An optional callback function can be provided, which is called whenever the rig fires `MoveToFinished`.
+
+    ???+ note
+        Passing `true` as the `position` argument will cause the rig to immediately halt its current movement, rather than moving to a new destination.
+
+??? success "Usage"
+    Parameters: The name of the rig (string). A Vector3 position to move to, or `true` to stop movement. An optional callback function called when movement finishes.
+
+    Returns: nil
+
+??? example
+    Moving a rig to a specific position and printing when it arrives.
+    ``` lua
+    rigMoveTo("Guard", Vector3.new(10, 0, 20), function()
+        print("Guard has arrived!")
+    end)
+    ```
+    Stopping a rig's movement.
+    ``` lua
+    rigMoveTo("Guard", true)
     ```
